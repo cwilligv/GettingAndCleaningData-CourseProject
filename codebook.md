@@ -1,34 +1,21 @@
-# GettingAndCleaningData-CourseProject
+# Getting And CleaningData CourseProject
 
-The following steps were performed to accomplish the project:
+The following steps were performed to accomplish the project. Furher comments are found in the R source file:
 
-Reading Features, Train and Test Data.
---------------------------------------
-# Activity Labels. Used in 3.
-activity_labels <- read.table("activity_labels.txt", header = FALSE)
-
-# Testing Data
-subject_test <- read.table("test/subject_test.txt")
-x_test <- read.table("test/X_test.txt")
-y_test <- read.table("test/y_test.txt")
-
-# Training Data
-subject_train <- read.table("train/subject_train.txt")
-x_train <- read.table("train/X_train.txt")
-y_train <- read.table("train/y_train.txt")
---------------------------------------
-
-After reading all txt data sets I'm able to merge the files into one complete.
---------------------------------------
-subjects <- rbind(subject_test, subject_train)
-features <- rbind(x_test, x_train)
-activity <- rbind(y_test, y_train)
-
-# Naming data columns
-names(features) <- features_names$V2
-
-colnames(activity) <- "Activity"
-colnames(subjects) <- "Subjects"
-merged_dataset <- cbind(features, activity, subjects)
---------------------------------------
-
+1. Read all text files and store them in data.table objects.
+2. Merged the data sets (subjects, features and activity) by using rbind function.
+3. Named features data columns with the corresponding names from features.txt file.
+4. Name single columns for Activity and Subjects.
+5. Bind all columns into one table for question number 1 from the project, by using cbind function.
+6. For question number 2 of the project:
+   a. Extracted all columns that contained mean or standard deviation.
+   b. added 2 extra columns for matching the 563 columns that the complete data set has.
+   c. Applied extracted columns with mean and std to complete data set.
+7. For question number 3 of the project:
+   a. Changed Activity column data type to character so I can replace the number for the labels.
+   b. Applied factor to the Activity column to lookup the corresponding label from table loaded in 1.
+8. For question number 4 of the project: this was done in 3. when assigning the corresponding labels from features.txt and replacing the default V1, V2, etc column names.
+9. For question number 5 of the project:
+   a. Created tidy_data object and populated it with the mean values.
+   b. Applied order function to tidy_data.
+   c. Wrote file into directoy with row.names = FALSE as asked in the project.
