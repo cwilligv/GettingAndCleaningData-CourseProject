@@ -4,10 +4,9 @@ The following steps were performed to accomplish the project:
 
 Reading Features, Train and Test Data.
 --------------------------------------
-Activity Labels. Used in 3.
 activity_labels <- read.table("activity_labels.txt", header = FALSE)
 
-Testing Data
+Test Data
 subject_test <- read.table("test/subject_test.txt")
 x_test <- read.table("test/X_test.txt")
 y_test <- read.table("test/y_test.txt")
