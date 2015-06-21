@@ -1,22 +1,13 @@
-# Getting And CleaningData CourseProject
+## Getting And Cleaning Data - Course Project.
 
-The following steps were performed to accomplish the project. Furher comments are found in the R source file:
+This repository contains the files asked by the final project of Getting and Cleaning Data Course.
+The following files are found:
 
-1. Read all text files and store them in data.table objects.
-2. Merged the data sets (subjects, features and activity) by using rbind function.
-3. Named features data columns with the corresponding names from features.txt file.
-4. Name single columns for Activity and Subjects.
-5. Bind all columns into one table for question number 1 from the project, by using cbind function.
-6. For question number 2 of the project:
-   a. Extracted all columns that contained mean or standard deviation.
-   b. added 2 extra columns for matching the 563 columns that the complete data set has.
-   c. Applied extracted columns with mean and std to complete data set.
-7. For question number 3 of the project:
-   a. Changed Activity column data type to character so I can replace the number for the labels.
-   b. Applied factor to the Activity column to lookup the corresponding label from table loaded in 1.
-8. For question number 4 of the project: this was done in 3. when assigning the corresponding labels from features.txt and replacing the default V1, V2, etc column names.
-9. For question number 5 of the project:
-   a. Created tidy_data object and populated it with the mean values.
-   b. Applied order function to tidy_data.
-   c. Wrote file into directoy with row.names = FALSE as asked in the project.
+- README.md : Explanation about the files contained in the repository and how to use them for the project.
+- run_analysis.R : R-code source file that performs the analysis on the data set
+- Tidy.txt : clean data set built from the original data provided, using file run_analysis.R
+- CodeBook.md : Explains how the solution was performed at a high level. Details are contained in the actual R code.
 
+In order to use this file set the working directory to the folder containing the activity for the project. Then download the R code file and run in your RStudio instance. The output should be a txt file called 'tidy_data.txt' which will be stored in the working directory.
+
+For more information about the acitivity file please go to: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
