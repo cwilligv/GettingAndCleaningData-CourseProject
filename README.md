@@ -1,6 +1,6 @@
 # Getting And CleaningData CourseProject
 
-The following steps were performed to accomplish the project:
+The following steps were performed to accomplish the project. Furher comments are found in the R source file:
 
 1. Read all text files and store them in data.table objects.
 2. Merged the data sets (subjects, features and activity) by using rbind function.
